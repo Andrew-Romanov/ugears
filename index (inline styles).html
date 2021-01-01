@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ugears</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g==" crossorigin="anonymous" />
+
+  <style type="text/css">
+  /* Объявление переменных */
+:root {
+  --green-color: #4ca34f;
+  --very-light-green-color: #f7fff7;
+  --orange-color: rgb(255, 126, 48);
+  --dark-color: #333;
+  --gray-color: #424242;
+  --very-light-gray-color: #f3f5fa;
+  --cards-background-color: #ebe5e2;
+}
+
+/* Общая стилизация */
+body {
+  color: var(--dark-color);
+  background: #f7fff7;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--dark-color);
+  /* color: var(--green-color); */
+}
+
+img, svg {
+  display: block;
+}
+
+h1, h2, h3, p, ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+.text-link {
+  color: var(--green-color);
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  width: 600px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+}
+
+.container--dark {
+  padding: 14px;
+  background: var(--gray-color);
+}
+
+.preheader__link {
+  color: white;
+}
+
+.container--header {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.container--footer {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.container--card {
+  background: var(--cards-background-color);
+}
+
+.container--hero {
+  padding: 0px;
+}
+
+.contacts {
+  width: calc(100% - 190px);
+}
+
+.white-text {
+  color: white;
+}
+
+.separator {
+  width: 600px;
+  height: 3px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: var(--orange-color);
+}
+
+.socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  width: 170px;
+  height: 30px;
+}
+
+.socials {
+}
+
+.socials__facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc((100% - 20px) / 5);
+  height: 100%;
+
+  color: white;
+  background: #3b5998;
+
+  transition: background 500ms;
+}
+
+.socials__twitter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc((100% - 20px) / 5);
+  height: 100%;
+
+  color: white;
+  background: #1da1f2;
+
+  transition: background 500ms;
+}
+
+.socials__linkedin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc((100% - 20px) / 5);
+  height: 100%;
+
+  color: white;
+  background: #0077b5;
+
+  transition: background 500ms;
+}
+
+.socials__instagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc((100% - 20px) / 5);
+  height: 100%;
+
+  color: white;
+  /* background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
+  background: #c85d8f;
+
+  transition: background 500ms;
+}
+
+.socials__youtube {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: calc((100% - 20px) / 5);
+  height: 100%;
+
+  color: white;
+  background: #ff0000;
+
+  transition: background 500ms;
+}
+
+.socials__facebook:hover,
+.socials__facebook:focus,
+.socials__twitter:hover,
+.socials__twitter:focus,
+.socials__linkedin:hover,
+.socials__linkedin:focus,
+.socials__instagram:hover,
+.socials__instagram:focus,
+.socials__youtube:hover,
+.socials__youtube:focus {
+  background: var(--green-color);
+}
+
+.hero__image {
+  width: 100%;
+}
+
+.card {
+}
+
+.card__link {
+  position: relative;
+  width: 250px;
+  height: 320px;
+  border-radius: 5px;
+  padding: 5px;
+
+  background: white;
+  box-shadow: 0 2px 2px rgba(11, 25, 28, 0.1),
+    0 0 0 0px var(--orange-color);
+    transition: box-shadow 500ms;
+}
+
+.card__link:hover,
+.card__link:focus {
+  box-shadow: 0 2px 2px rgba(11, 25, 28, 0.1),
+    0 0 0 5px var(--green-color);
+}
+
+.card:nth-child(even) {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.card__image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.card__image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card__item-name {
+  position: absolute;
+  top: 200px;
+  left: 15px;
+
+  text-align: left;
+
+  transition: color 500ms;
+}
+
+.card__item-price {
+  position: absolute;
+  bottom: 55px;
+  right: 15px;
+
+  font-size: 26px;
+  text-align: right;
+
+  /* color: var(--green-color); */
+  transition: color 500ms;
+}
+
+.card__link:hover .card__item-name,
+.card__link:focus .card__item-name,
+.card__link:hover .card__item-price,
+.card__link:focus .card__item-price {
+  color: var(--green-color);
+}
+
+
+
+.card__button {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - 30px);
+  padding: 5px 15px;
+  border-radius: 5px;
+
+  background: var(--green-color);
+  transition: background 500ms;
+}
+
+.card__link:hover .card__button,
+.card__link:focus .card__button {
+  background: var(--orange-color);
+}
+
+.card__button-text {
+  text-align: center;
+  color: white;
+}
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="container container--dark">
+      <a class="preheader__link" href="https://ugearsmodels.us/catalog/">Enjoy Free USA Shipping & Easy Return</a>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="container container--header">
+
+      <a href="https://ugearsmodels.us/" target="_blank">
+        <img src="./images/ugears_logo.svg" width="160" alt="UGears Logo">
+      </a>
+
+      <div class="socials">
+        <a class="socials__facebook" href="https://www.facebook.com/ugearsmodels.us/" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-facebook-f fa-w-10 fa-3x"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" class=""></path></svg>
+        </a>
+        <a class="socials__twitter" href="https://twitter.com/UkrainianBridge" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-twitter fa-w-16 fa-3x"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" class=""></path></svg>
+        </a>
+        <a class="socials__linkedin" href="https://www.linkedin.com/company/ugearsmodels" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-linkedin-in fa-w-14 fa-2x"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" class=""></path></svg>
+        </a>
+        <a class="socials__instagram" href="https://www.instagram.com/ugears_us/" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-instagram fa-w-14 fa-3x"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" class=""></path></svg>
+        </a>
+        <a class="socials__youtube" href="https://www.youtube.com/channel/UC89VDZKFyJCqSE1nMbCRY0A/videos" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-youtube fa-w-18 fa-3x"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" class=""></path></svg>
+        </a>
+      </div>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <div class="separator"></div>
+
+    <div class="container">
+      <p>
+        <!-- <strong>Hi {{subscriber_id}},</strong> -->
+        <strong>Dear subscriber,</strong>
+        <br>
+        I hope you are safe and healthy!
+        <br>
+        I would like to introduce our UGEARS 3D models, as I think they would seamlessly fit into your eco-friendly product lines. Check out our 
+        <!-- <a href="https://ugearsmodels.us/catalog/safe/" target="_blank">wholesale price list</a> 
+        and  -->
+        <a class="text-link" href="https://ugearsmodels.us/catalog/" target="_blank">catalog.</a>
+      </p>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="container container--hero">
+      <img class="hero__image" src="./images/Train.jpg" alt="UGears Train">
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="container container--card">
+
+      <div class="card">
+        <a class="card__link" href="https://ugearsmodels.us/catalog/safe/" target="_blank">
+          <div class="card__image-container">
+            <img class="card__image" src="https://ugearsmodels.us/wp-content/uploads/2016/10/01.-ugears-safe-2-300x300.jpg" alt="UGears Mechanical Wooden Model 3D Puzzle Kit Safe">
+          </div>
+          <p class="card__item-name">UGears Safe</p>
+          <p class="card__item-price">$59.90</p>
+          <div class="card__button">
+            <p class="card__button-text">SHOP NOW</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a class="card__link" href="https://ugearsmodels.us/catalog/mechanical-box/" target="_blank">
+          <div class="card__image-container">
+            <img class="card__image" src="https://ugearsmodels.us/wp-content/uploads/2016/10/01.-Etui-UGears-2-300x300.jpg" alt="UGears Business Card Holder">
+          </div>
+          <p class="card__item-name">UGears Business <br>Card Holder</p>
+          <p class="card__item-price">$29.90</p>
+          <div class="card__button">
+            <p class="card__button-text">SHOP NOW</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a class="card__link" href="https://ugearsmodels.us/catalog/ugears-hurdy-gurdy/" target="_blank">
+          <div class="card__image-container">
+            <img class="card__image" src="https://ugearsmodels.us/wp-content/uploads/2017/10/01-Hurdy-Gurdya-300x300.jpg" alt="UGears Mechanical Wooden Model 3D Puzzle Kit Hurdy-Gurdy">
+          </div>
+          <p class="card__item-name">UGears Hurdy-Gurdy</p>
+          <p class="card__item-price">$69.90</p>
+          <div class="card__button">
+            <p class="card__button-text">SHOP NOW</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a class="card__link" href="https://ugearsmodels.us/catalog/ugears-stem-lab-curvimeter/" target="_blank">
+          <div class="card__image-container">
+            <img class="card__image" src="https://ugearsmodels.us/wp-content/uploads/2020/09/01.Curvimeter-300x300.jpg" alt="UGears STEM lab Curvimeter">
+          </div>
+          <p class="card__item-name">UGears STEM lab <br>Curvimeter</p>
+          <p class="card__item-price">$19.90</p>
+          <div class="card__button">
+            <p class="card__button-text">SHOP NOW</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a class="card__link" href="https://ugearsmodels.us/catalog/mechanical-box/" target="_blank">
+          <div class="card__image-container">
+            <img class="card__image" src="https://ugearsmodels.us/wp-content/uploads/2016/10/01.-Etui-UGears-2-300x300.jpg" alt="UGears Business Card Holder">
+          </div>
+          <p class="card__item-name">UGears Business <br>Card Holder</p>
+          <p class="card__item-price">$29.90</p>
+          <div class="card__button">
+            <p class="card__button-text">SHOP NOW</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a class="card__link" href="https://ugearsmodels.us/catalog/ugears-hurdy-gurdy/" target="_blank">
+          <div class="card__image-container">
+            <img class="card__image" src="https://ugearsmodels.us/wp-content/uploads/2017/10/01-Hurdy-Gurdya-300x300.jpg" alt="UGears Mechanical Wooden Model 3D Puzzle Kit Hurdy-Gurdy">
+          </div>
+          <p class="card__item-name">UGears Hurdy-Gurdy</p>
+          <p class="card__item-price">$69.90</p>
+          <div class="card__button">
+            <p class="card__button-text">SHOP NOW</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a class="card__link" href="https://ugearsmodels.us/catalog/ugears-stem-lab-curvimeter/" target="_blank">
+          <div class="card__image-container">
+            <img class="card__image" src="https://ugearsmodels.us/wp-content/uploads/2020/09/01.Curvimeter-300x300.jpg" alt="UGears STEM lab Curvimeter">
+          </div>
+          <p class="card__item-name">UGears STEM lab <br>Curvimeter</p>
+          <p class="card__item-price">$19.90</p>
+          <div class="card__button">
+            <p class="card__button-text">SHOP NOW</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    <div class="separator"></div>
+
+    <div class="container container--footer">
+
+      <div class="contacts">
+        <p>CALL: <a class="text-link" href="tel:6507963260">650-796-3260</a></P>
+          <p>EMAIL: <a class="text-link" href="mailto:olga@ugearsmodels.us">olga@ugearsmodels.us</a></p>
+          <p>14701 Smokey Citrine street, <br>Delray Beach, FL 33446</p>
+      </div>
+  
+        <!-- <a href="https://ugearsmodels.us/" target="_blank">
+        <img src="./images/ugears_logo.svg" width="160" alt="UGears Logo">
+      </a>
+ -->
+      <div class="socials">
+        <a class="socials__facebook" href="https://www.facebook.com/ugearsmodels.us/" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-facebook-f fa-w-10 fa-3x"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" class=""></path></svg>
+        </a>
+        <a class="socials__twitter" href="https://twitter.com/UkrainianBridge" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-twitter fa-w-16 fa-3x"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" class=""></path></svg>
+        </a>
+        <a class="socials__linkedin" href="https://www.linkedin.com/company/ugearsmodels" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-linkedin-in fa-w-14 fa-2x"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" class=""></path></svg>
+        </a>
+        <a class="socials__instagram" href="https://www.instagram.com/ugears_us/" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-instagram fa-w-14 fa-3x"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" class=""></path></svg>
+        </a>
+        <a class="socials__youtube" href="https://www.youtube.com/channel/UC89VDZKFyJCqSE1nMbCRY0A/videos" target="_blank">
+          <svg width="18" height="18" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-youtube fa-w-18 fa-3x"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" class=""></path></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="container container--dark">
+      <p class="white-text">© 2020 «UGears Models»</p>
+    </div>
+
+  </footer>
+
+</body>
+</html>
